@@ -1,0 +1,97 @@
+/////////////////////////
+	
+	Window
+			
+	-----void window("nomeDaJanela").show();
+			Sobe a sua janela criada no glade
+
+/////////////////////////
+	
+	Button
+
+	-----void button("nomeDoBotão").onClick(NomeDaFunção);
+			
+			Ao clicar no botão definido no primeiro parênteses,
+				chama a função definida no segundo parênteses !
+
+				Ex:
+					void imprime() {
+
+						printf("Ao clicar no botão, imprime isso");
+					}
+
+					int main (...) {
+
+						//Código ......	
+
+						button("button1").onClick(imprime);
+					}	
+	
+/////////////////////////
+	
+	Entry
+
+	-----const char* entry("nomeDaEntry").getEntry();
+			Retorna o que está escrito na entry no formato const char*;
+
+			Ex:
+				int main (...) {
+
+					//Código ......	
+
+					const char* texto = entry("entry1").getEntry();
+					printf("%s\n", texto);
+				}
+
+	-----double entry("nomeDaEntry").getEntryAsDouble();
+			Retorna o que está escrito na entry no formato double,
+				Não use caso não esteja trabalhando com números !!!
+
+				Ex:
+				int main (...) {
+
+					//Código ......	
+
+					double numero = entry("entry1").getEntryAsDouble();
+					printf("%d\n", numero);
+				}
+
+/////////////////////////
+	
+	Label
+
+	-----void label("nomeDaLabel").write(char* texto);
+			Escreve o texto definido em write() na label;
+
+				Ex:
+					int main (...) {
+
+						//Código ......	
+
+						label("label1").write("Hello gtkQuery!");
+					}
+
+	-----void label("nomeDaLabel").writeDouble(double numero);
+			Faz a conversão de double para char* e escreve no label;
+
+				Ex:
+					int main (...) {
+
+						//Código ......	
+
+						double numero = 5.5;	
+						
+						label("label1").writeDouble(numero);
+
+					}
+
+/////////////////////////
+	
+	SpinButton
+
+	-----double spin("nomeDoSpinButton").getSpin();
+			retorna o numero do spin button;
+
+
+	-----void spin("nomeDoSpinButton").adjustSpin(double value, double lower, double upper, double step_up, double step_down, double page_size);
+			Configura o SpinButton;		
